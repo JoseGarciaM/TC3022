@@ -36,16 +36,7 @@ function gameEvents(game) {
     game.playBtnSound();
     game.playTurn();
   });
-  /*
-        document.getElementById("resetLvl").addEventListener("click", () => {
-            game.resetLevel();
-        });
 
-            document.getElementById("tryAgain").addEventListener("click", () => {
-            game.playBtnSound();
-            game.tryLevelAgain();
-        });
-    */
   document.getElementById("nextLevel").addEventListener("click", () => {
     game.playBtnSound();
     game.playNextLevel();

@@ -1,46 +1,9 @@
-canvas {
-	display: block;
-}
-
-#canvas {
-	position: relative;
-	border: none;
-}
-
-button {
-	cursor: pointer;
-	color: white;
-	background-color: #00afb5;
-	border: none;
-	padding: 5px 10px;
-	border-radius: 5px;
-	margin-bottom: 5px;
-}
-
-button:hover {
-	background-color: #00c6c9;
-}
-
-button:disabled {
-	background-color: #c9c9c9;
-	cursor: not-allowed;
-}
-
 /* Controls
 ******************************************************/
 
-
-#controls .leftNav {
-	display: flex;
-	flex-direction: column;
-	flex-flow: column nowrap;
-	position: absolute;
-	z-index: 99;
-}
-
 /* Drag and Drop
 ******************************************************/
-#dragAndDrop {
+/* #dragAndDrop {
 	pointer-events: all;
 	position: absolute;
 	bottom: 0;
@@ -66,14 +29,9 @@ button:disabled {
 	color: white;
 	padding: 0px 10px;
 	border-radius: 5px;
-}
+} */
 
-.floatText {
-	position: absolute;
-	z-index: 1;
-}
-
-#playTurn, #resetLvl {
+/* #playTurn, #resetLvl {
 	margin-left: 10px;
 	margin-bottom: 0;
 	border-radius: 50px;
@@ -89,7 +47,7 @@ button:disabled {
 	display: flex;
 	height: 90px;
 	align-items: center;
-}
+} */
 
 .draggable {
 	cursor: pointer;
@@ -160,16 +118,6 @@ button:disabled {
 
 /* Menu
 ******************************************************/
-.menu {
-	padding: calc(12vw + 80px) 6vw 6vw calc(12vw + 130px);
-	position: absolute;
-	top: 0;
-}
-
-.menu .title {
-	font-size: 3.5em;
-	margin: 0;
-}
 
 #levelComplete,
 #endMenu {
