@@ -1,24 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="h-screen min-h-screen">
+<html lang="en" class="h-screen min-h-screen touch-manipulation">
 	<head>
 		<title>Proyecto Final - a01023616</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 		<script src="https://cdn.tailwindcss.com"></script>
-		<script>
-			tailwind.config = {
-				theme: {
-					extend: {
-						fontFamily: {
-							'sans': ['Inter', 'sans-serif']
-						}
-					}
-				}
-			}
-		</script>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" /></script>
 		<script src="libs/three.js/three.min.js"></script>
 		<script src="libs/three.js/loaders/inflate.min.js"></script>
@@ -36,7 +23,6 @@
 				}
 			);
 		</script>
-
 		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body class="h-full min-h-full">
@@ -49,23 +35,23 @@
 							class="h-10"
 						/>
 						<section 
-							class="flex flex-1 items-center justify-end space-x-5 lg:space-x-8"
+							class="flex flex-1 items-center justify-end space-x-4 lg:space-x-8"
 						>
 							<button
 								id="infoBtn"
-								class="text-sm font-bold"
+								class="text-sm font-medium"
 							>
 								Tutorial
 							</button>
 							<button
 								id="debug"
-								class="text-sm font-bold"
+								class="text-sm font-medium"
 							>
 								Debug
 							</button>
 							<button 
 								id="soundBtn"
-								class="text-sm font-bold"
+								class="text-sm font-medium"
 							>
 								Prender Sonido
 							</button>
@@ -78,9 +64,9 @@
 				>
 					<section
 						id="mainMenu" 
-						class="w-full mt-14 py-24 px-5 flex flex-col items-center justify-center space-y-6"
+						class="w-full mt-14 py-24 px-5 flex flex-col items-center justify-center space-y-6 text-center"
 					>
-						<h1 class="text-3xl md:text-5xl lg:text-7xl font-black">
+						<h1 class="text-3xl md:text-5xl lg:text-7xl font-bold">
 							Ayuda a R2D2
 						</h1>
 						<p class="text-lg font-medium pb-5">
@@ -89,7 +75,7 @@
 						<button
 							id="startGame"
 							disabled
-							class="h-12 px-6 rounded-full bg-blue-800/90 text-white font-bold text-base"
+							class="h-12 px-6 rounded-full bg-blue-800/90 text-white font-medium text-base"
 						>
 							Cargando...
 						</button>
@@ -104,43 +90,42 @@
 						>
 							<div
 								id="dropzone"
-								class="flex w-full max-w-lg h-full border-dashed border-2 border-slate-400 rounded-xl p-1 space-x-1"
+								class="flex w-full max-w-lg h-full border-dashed border-2 border-slate-400 rounded-xl p-1 space-x-1 items-center"
 							>
-								<span>Dropzone</span>
 							</div>
 						</div>
 						<div
 							id="draggables"
-							class="flex w-full max-w-lg h-full space-x-1 flex-wrap space-x1"
+							class="flex w-full max-w-lg h-full space-x-1 flex-wrap space-x-3"
 						></div>
 						<button
 							id="playTurn"
 							disabled
-							class="h-12 w-full max-w-lg px-6 rounded-full bg-blue-800/90 text-white font-bold text-base"
+							class="h-12 w-full max-w-lg px-6 rounded-full bg-blue-800/90 text-white font-medium text-base"
 						>
 							Correr!
 						</button>
 					</section>
 					<section 
 						id="levelComplete" 
-						class="w-full mt-14 py-24 px-5 flex flex-col items-center justify-center space-y-6"
+						class="w-full mt-14 py-24 px-5 flex flex-col items-center justify-center space-y-6 text-center"
 					>
-						<h1 class="text-3xl md:text-5xl lg:text-7xl font-black">Eso! Nivel Completado</h1>
+						<h1 class="text-3xl md:text-5xl lg:text-7xl font-bold">Eso! Nivel Completado</h1>
 						<p class="text-lg font-medium pb-5">Vamos al siguiente nivel!</p>
 						<button
 							id="nextLevel"
-							class="h-12 px-6 rounded-full bg-blue-800/90 text-white font-bold text-base"
+							class="h-12 px-6 rounded-full bg-blue-800/90 text-white font-medium text-base"
 						>
 							Siguiente Nivel
 						</button>
 					</section>
 					<section
 						id="endMenu"
-						class="w-full mt-14 py-24 px-5 flex flex-col items-center justify-center space-y-6"
+						class="w-full mt-14 py-24 px-5 flex flex-col items-center justify-center space-y-6 text-center"
 					>
-						<h1 class="text-3xl md:text-5xl lg:text-7xl font-black">Fin!</h1>
+						<h1 class="text-3xl md:text-5xl lg:text-7xl font-bold">Fin!</h1>
 						<p class="text-lg font-medium pb-5">Gracias por jugar!</p>
-						<p class="text-lg font-medium pb-5 text-blue-700">Creado por José Garcia - a01023616</p>
+						<p class="text-xl font-bold pb-5 text-blue-700">Creado por José Garcia - a01023616</p>
 					</section>
 				</section>
 				<canvas id="canvas" class="relative w-full h-full flex" />
@@ -153,9 +138,9 @@
 					id="modal"
 					class="bg-white p-5 rounded-xl flex flex-col space-y-10"
 				>
-					<div class="max-w-md flex flex-col space-y-2">
+					<div class="max-w-md flex flex-col space-y-2 text-center">
 						<h1
-							class="text-3xl font-black pb-5"
+							class="text-3xl font-bold pb-5"
 						>
 							Ayuda a R2D2 a llegar al ultimo bloque!
 						</h1>
@@ -164,7 +149,7 @@
 					</div>
 					<button
 						id="closeModal"
-						class="h-12 px-6 rounded-full bg-blue-800/90 text-white font-bold text-base"
+						class="h-12 px-6 rounded-full bg-blue-800/90 text-white font-medium text-base"
 					>
 						Vamos!
 					</button>

@@ -141,23 +141,23 @@ class Game {
         buttons: {
           DragFront: 2,
           DragLeft: 0,
-          DragRight: 0,
+          DragRight: 1,
         },
       },
       {
         level: "slfre",
         buttons: {
-          DragFront: 2,
-          DragLeft: 1,
-          DragRight: 1,
+          DragFront: 3,
+          DragLeft: 2,
+          DragRight: 2,
         },
       },
       {
         level: "sflfrffre",
         buttons: {
-          DragFront: 5,
-          DragLeft: 2,
-          DragRight: 2,
+          DragFront: 6,
+          DragLeft: 3,
+          DragRight: 4,
         },
       },
     ];

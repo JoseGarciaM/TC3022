@@ -1,19 +1,20 @@
 .draggable {
 	cursor: pointer;
 	background-color: rgb(32, 32, 32);
-	width: 55px;
-	height: 55px;
+	width: 50px;
+	height: 50px;
 	color: white;
-	z-index: 10;
+	z-index: 40;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	border-radius: 5px;
+	border-radius:10px;
 }
 
 .draggable img {
 	width: 100%;
+	user-select: none;
 }
 
 .draggable.disabled {
@@ -26,16 +27,19 @@
 }
 
 .draggable .number {
-	background-color: #B5127F;
+	background-color: rgb(30 64 175 / 0.9);
 	border-radius: 50%;
 	position: absolute;
-	top: -10;
-	right: -10;
-	width: 25px;
-	height: 25px;
+	top: -7px;
+	right: -7px;
+	width: 20px;
+	height: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	user-select: none;
+	font-size: 14px;
+	color: white;
 }
 
 .draggable.disabled .number {
@@ -54,6 +58,7 @@
 	justify-content: center;
 	cursor: pointer;
 	display: none;
+	color: white;
 }
 
 .draggable:last-child {
