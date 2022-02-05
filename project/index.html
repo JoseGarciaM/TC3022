@@ -104,12 +104,15 @@
 						>
 							<div
 								id="dropzone"
-								class="flex w-full max-w-lg h-full border-dashed border-2 border-slate-400 rounded-xl"
+								class="flex w-full max-w-lg h-full border-dashed border-2 border-slate-400 rounded-xl p-1 space-x-1"
 							>
-								<span class="floatText">Dropzone</span>
+								<span>Dropzone</span>
 							</div>
 						</div>
-						<div id="draggables"></div>
+						<div
+							id="draggables"
+							class="flex w-full max-w-lg h-full space-x-1 flex-wrap space-x1"
+						></div>
 						<button
 							id="playTurn"
 							disabled
@@ -120,30 +123,52 @@
 					</section>
 					<section 
 						id="levelComplete" 
-						class="menu"
+						class="w-full mt-14 py-24 px-5 flex flex-col items-center justify-center space-y-6"
 					>
-						<h1 class="title">Eso! Nivel Completado</h1>
-						<h3>Vamos al siguiente nivel!</h3>
-						<button id="nextLevel">Siguiente Nivel</button>
-						<!--<button id="tryAgain">Try again</button>-->
+						<h1 class="text-3xl md:text-5xl lg:text-7xl font-black">Eso! Nivel Completado</h1>
+						<p class="text-lg font-medium pb-5">Vamos al siguiente nivel!</p>
+						<button
+							id="nextLevel"
+							class="h-12 px-6 rounded-full bg-blue-800/90 text-white font-bold text-base"
+						>
+							Siguiente Nivel
+						</button>
 					</section>
-					<section id="endMenu" class="menu">
-						<h1 class="title">Fin!</h1>
-						<h2>Gracias por jugar!</h2>
-						<p>Creado por José Garcia - a01023616</p>
+					<section
+						id="endMenu"
+						class="w-full mt-14 py-24 px-5 flex flex-col items-center justify-center space-y-6"
+					>
+						<h1 class="text-3xl md:text-5xl lg:text-7xl font-black">Fin!</h1>
+						<p class="text-lg font-medium pb-5">Gracias por jugar!</p>
+						<p class="text-lg font-medium pb-5 text-blue-700">Creado por José Garcia - a01023616</p>
 					</section>
 				</section>
 				<canvas id="canvas" class="relative w-full h-full flex" />
 			</div>
-			<div id="instructionsModal">
-				<div class="modal" id="modal">
-					<span class="close" id="closeModal">x</span>
-					<div class="content">
+			<div
+				id="instructionsModal"
+				class="fixed inset-0 w-full h-full hidden items-center justify-center bg-black/50 backdrop-blur z-50"
+			>
+				<div
+					id="modal"
+					class="bg-white p-5 rounded-xl flex flex-col space-y-10"
+				>
+					<div class="max-w-md flex flex-col space-y-2">
 						<!-- <video src="public/video/tutorial.mov" autoplay loop muted /> -->
-						<h4 class="title">Ayuda a R2D2 a llegar al ultimo bloque!</h4>
+						<h1
+							class="text-3xl font-black pb-5"
+						>
+							Ayuda a R2D2 a llegar al ultimo bloque!
+						</h1>
 						<p>- Draguea las instrucciones.</p>
-						<p>- Haz click en Reproducir y mira a R2D2 mover!</p>
+						<p>- Haz click en el botón "Correr!" y mira a R2D2 mover!</p>
 					</div>
+					<button
+						id="closeModal"
+						class="h-12 px-6 rounded-full bg-blue-800/90 text-white font-bold text-base"
+					>
+						Vamos!
+					</button>
 				</div>
 			</div>
 		</div>

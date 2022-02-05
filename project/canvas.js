@@ -1151,13 +1151,13 @@ class HUD {
   openMenu(menu) {
     switch (menu) {
       case "main":
-        this.mainMenu.style.display = "block";
+        this.mainMenu.style.display = "flex";
         break;
       case "win":
-        this.levelComplete.style.display = "block";
+        this.levelComplete.style.display = "flex";
         break;
       case "end":
-        this.endMenu.style.display = "block";
+        this.endMenu.style.display = "flex";
         break;
       default:
         break;

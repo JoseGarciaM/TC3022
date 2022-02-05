@@ -1,61 +1,9 @@
-/* Controls
-******************************************************/
-
-/* Drag and Drop
-******************************************************/
-/* #dragAndDrop {
-	pointer-events: all;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	align-items: center;
-	flex-direction: column;
-
-	display: none;
-}
-
-#dropzoneContainer {
-	height: 65px;
-	display: flex;
-	align-items: center;
-}
-
-#dropzone {
-	display: flex;
-	height: 100%;
-	align-items: center;
-	background-color: darkgray;
-	min-width: 400px;
-	color: white;
-	padding: 0px 10px;
-	border-radius: 5px;
-} */
-
-/* #playTurn, #resetLvl {
-	margin-left: 10px;
-	margin-bottom: 0;
-	border-radius: 50px;
-	width: 60px;
-	height: 60px;
-}
-
-#playTurn img {
-	width: 100%;
-}
-
-#draggables {
-	display: flex;
-	height: 90px;
-	align-items: center;
-} */
-
 .draggable {
 	cursor: pointer;
 	background-color: rgb(32, 32, 32);
 	width: 55px;
 	height: 55px;
 	color: white;
-	margin-right: 14px;
 	z-index: 10;
 	display: flex;
 	align-items: center;
@@ -126,19 +74,7 @@
 
 /* Instructions Modal
 ******************************************************/
-#instructionsModal{
-    background-color: rgba(0, 0, 0, 0.2);
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    align-items: center;
-	justify-content: center;
-	/*display: flex;*/
-	display: none;
-}
+
 
 .modal{
 	background-color: white;
