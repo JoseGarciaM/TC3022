@@ -167,19 +167,19 @@ class Game {
     // Audio -------------
     this.volume = false; // Sound volume
     this.ambienAudio = document.createElement("audio");
-    this.ambienAudio.src = "public/audio/bg.mp3";
+    this.ambienAudio.src = "assets/audio/bg.mp3";
     this.ambienAudio.loop = true;
     this.ambienAudio.volume = 0.25;
     this.robotAudio = document.createElement("audio");
     this.robotAudio.volume = 0.3;
     this.hudAudio = document.createElement("audio");
-    this.hudAudio.src = "public/audio/click.mp3";
+    this.hudAudio.src = "assets/audio/click.mp3";
     this.hudAudio.volume = 0.35;
     this.levelAudio = document.createElement("audio");
-    this.levelAudio.src = "public/audio/winLevel.mp3";
+    this.levelAudio.src = "assets/audio/winLevel.mp3";
     this.levelAudio.volume = 0.25;
     this.happyAudio = document.createElement("audio");
-    this.happyAudio.src = "public/utils/robotHappy.wav";
+    this.happyAudio.src = "assets/utils/robotHappy.wav";
     this.happyAudio.volume = 0.5;
     return this;
   }
@@ -438,8 +438,8 @@ class Level {
     this.loaded = false;
     this.inThreeScene = false;
     //Resources ----------------
-    this.tileTextureUrl = "public/img/tileTexture.png";
-    this.tileTextureEndUrl = "public/img/tileTextureEnd.png";
+    this.tileTextureUrl = "assets/img/tileTexture.png";
+    this.tileTextureEndUrl = "assets/img/tileTextureEnd.png";
     this.tileTexture = new THREE.TextureLoader().load(this.tileTextureUrl);
     this.tileTextureEnd = new THREE.TextureLoader().load(
       this.tileTextureEndUrl
@@ -598,7 +598,7 @@ class Tile {
     this.inThreeScene = false;
     this.type = type;
     //Resources ----------------
-    this.resourceUrl = "public/utils/tileB.fbx";
+    this.resourceUrl = "assets/utils/tileB.fbx";
     this.obj = null;
     this.loader = new THREE.FBXLoader();
     this.loader.load(
@@ -737,10 +737,10 @@ class Player {
     this.action = "idle";
     this.obj = null;
     //Resources ----------
-    this.resourceUrl = "public/utils/robot.fbx";
-    this.textureUrl = "public/img/robotTexture.png";
+    this.resourceUrl = "assets/utils/robot.fbx";
+    this.textureUrl = "assets/img/robotTexture.png";
     this.texture = new THREE.TextureLoader().load(this.textureUrl);
-    this.textureEm = new THREE.TextureLoader().load("public/img/robotEmissive.png");
+    this.textureEm = new THREE.TextureLoader().load("assets/img/robotEmissive.png");
     this.material = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       map: this.texture,
@@ -885,7 +885,7 @@ class Player {
   checkFloor() {
     let intersects = this.raycaster.intersectObjects(root.children, true, []);
     if (intersects.length <= 0) {
-      game.playSound("public/audio/fall.mp3");
+      game.playSound("assets/audio/fall.mp3");
       game.commands = [];
       this.inAction = true;
       this.action = "fall";
@@ -920,7 +920,7 @@ class Player {
         .repeat(0)
         .start()
         .onStart(() => {
-          game.playSound("public/audio/robotFront.mp3");
+          game.playSound("assets/audio/robotFront.mp3");
         })
         .onComplete(() => {
           this.isFrontTween = false;
@@ -930,7 +930,7 @@ class Player {
     // Left animation
     if (this.leftTween) this.leftTween.stop(); // override tween animation
     if (this.isLeftTween) {
-      game.playSound("public/audio/robotRot.mp3");
+      game.playSound("assets/audio/robotRot.mp3");
 
       this.inAction = true;
       this.action = "left";
@@ -947,7 +947,7 @@ class Player {
         .repeat(0)
         .start()
         .onStart(() => {
-          game.playSound("public/audio/robotRot.mp3");
+          game.playSound("assets/audio/robotRot.mp3");
         })
         .onComplete(() => {
           this.isLeftTween = false;
@@ -973,7 +973,7 @@ class Player {
         .repeat(0)
         .start()
         .onStart(() => {
-          game.playSound("public/audio/robotRot.mp3");
+          game.playSound("assets/audio/robotRot.mp3");
         })
         .onComplete(() => {
           this.isRightTween = false;
@@ -1092,17 +1092,17 @@ class HUD {
     draggable.id = id;
     switch (id) {
       case "DragFront":
-        imgArrow.src = "public/img/frontArrow.png";
+        imgArrow.src = "assets/img/frontArrow.png";
         draggable.appendChild(imgArrow);
         //draggable.innerHTML = "Front";
         break;
       case "DragLeft":
-        imgArrow.src = "public/img/leftArrow.png";
+        imgArrow.src = "assets/img/leftArrow.png";
         draggable.appendChild(imgArrow);
         //draggable.innerHTML = "Left";
         break;
       case "DragRight":
-        imgArrow.src = "public/img/rightArrow.png";
+        imgArrow.src = "assets/img/rightArrow.png";
         draggable.appendChild(imgArrow);
         break;
       default:
