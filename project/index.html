@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Proyecto Final - a01023616</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						fontFamily: {
+							'sans': ['Inter', 'sans-serif']
+						}
+					}
+				}
+			}
+		</script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" /></script>
+		<script src="libs/three.js/three.min.js"></script>
+		<script src="libs/three.js/loaders/inflate.min.js"></script>
+		<script src="libs/three.js/loaders/FBXLoader.js"></script>
+		<script src="libs/tween.js/tween.js"></script>
+		<script src="main.js"></script>
+		<script src="handlers.js"></script>
+		<script type="text/javascript">
+			$(document).ready(
+				function() {	
+					let canvas = document.getElementById("canvas");
+					canvas.width = window.innerWidth;
+					canvas.height = window.innerHeight;
+					main(canvas);
+				}
+			);
+		</script>
+
+		<link rel="stylesheet" href="main.css" />
+	</head>
+	<body>
+		<div id="root" class="relative w-screen h-screen">
+			
+			<div class="relative w-full h-full">
+				<header class="fixed top-0 left-0 z-40 w-screen h-14 bg-cyan-100">
+					<nav class="w-full h-full">
+						<section>
+							<button id="infoBtn">Tutorial</button>
+							<button id="debug">Debug</button>
+							<button id="soundBtn">Prender Sonido</button>
+						</section>
+					</nav>
+				</header>
+				<div class="fixed inset-0 z-30 w-screen h-screen">
+					<section id="dragAndDrop">
+						<div id="dropzoneContainer">
+							<div id="dropzone">
+								<span class="floatText">Dropzone</span>
+							</div>
+							<button id="playTurn" disabled>
+								<img src="public/img/play.png" alt="Play">
+							</button>
+							<!--<button id="resetLvl">Reset</button>-->
+						</div>
+						<div id="draggables">
+						</div>
+					</section>
+					<section
+						id="mainMenu" 
+						class="menu"
+					>
+						<h1 class="title">Ayuda a R2D2</h1>
+						<p>Aprende logica basica</p>
+						<button id="startGame" disabled>Cargando...</button>
+					</section>
+					<section id="levelComplete" class="menu">
+						<h1 class="title">Eso! Nivel Completado</h1>
+						<h3>Vamos al siguiente nivel!</h3>
+						<button id="nextLevel">Siguiente Nivel</button>
+						<!--<button id="tryAgain">Try again</button>-->
+					</section>
+					<section id="endMenu" class="menu">
+						<h1 class="title">Fin!</h1>
+						<h2>Gracias por jugar!</h2>
+						<p>Creado por José Garcia - a01023616</p>
+					</section>
+				</div>
+				<canvas id="canvas" class="relative w-full h-full flex" />
+			</div>
+			<div id="instructionsModal">
+				<div class="modal" id="modal">
+					<span class="close" id="closeModal">x</span>
+					<div class="content">
+						<video src="public/video/tutorial.mov" autoplay loop muted />
+						<h4 class="title">Ayuda a R2D2 a llegar al ultimo bloque!</h4>
+						<p>- Draguea las instrucciones.</p>
+						<p>- Haz click en Reproducir y mira a R2D2 mover!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
