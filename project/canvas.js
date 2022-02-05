@@ -153,6 +153,14 @@ class Game {
         },
       },
       {
+        level: "slfrfe",
+        buttons: {
+          DragFront: 3,
+          DragLeft: 2,
+          DragRight: 2,
+        },
+      },
+      {
         level: "sflfrffre",
         buttons: {
           DragFront: 6,

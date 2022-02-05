@@ -15,6 +15,7 @@
 .draggable img {
 	width: 100%;
 	user-select: none;
+	pointer-events: none;
 }
 
 .draggable.disabled {
@@ -38,6 +39,7 @@
 	align-items: center;
 	justify-content: center;
 	user-select: none;
+	pointer-events: none;
 	font-size: 14px;
 	color: white;
 }
